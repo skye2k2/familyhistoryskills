@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+  <main>
+    <article>
+      <hgroup>
+        <h1><%= title %></h1>
+        <h3>for &lt;%username%&gt;</h3>
+      </hgroup>
+      <p>Your personal progress in mastering essential family history skills.</p>
+
+
+      <h3>Total completeness: <span class="total">27%</span></h3>
+
+      <p><a>Show/Hide All</a></p>
+
+      <form>
+
+      <!-- Begin repeatable block for competencies with subsections -->
+        <details id="account-management">
+          <summary><a id="user-content-account-management" class="anchor" href="#account-management" aria-hidden="true"></a>Account Management <span class="completeness">(50%)</span></summary>
+          <div class="content">
+            <label><input type="checkbox" name="account-item" /> Item</label>
+            <ul>
+              <li><a>Resource for helping with stuff</a></li>
+            </ul>
+            <div class="flex-container">
+            </div>
+          </div>
+        </details>
+        <!-- End repeatable block for competencies with subsections -->
+
+      </form>
+    </article>
+  </main>
+
+<% include partials/footer %>

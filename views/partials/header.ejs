@@ -1,0 +1,42 @@
+<!-- BEGIN ADDED BY header.ejs -->
+<!-- Open-source project: https://github.com/skye2k2/familyhistoryskills.git -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Load external scripts and styles, falling back to local copies if unreachable or offline -->
+
+    <script type="text/javascript">
+    function loadCSS(url, localPath) {
+      var url = url,
+          head = document.getElementsByTagName('head')[0],
+          link = document.createElement('link');
+
+      if (!window.navigator.onLine) {
+        url = localPath;
+      }
+
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = url;
+
+      head.appendChild(link);
+    }
+
+    loadCSS("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css", "assets/css/bootstrap.min.css");
+    loadCSS("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap-theme.min.css", "assets/css/bootstrap-theme.min.css");
+    </script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('<script src="vendor/js/jquery-2.1.4.min.js"><\/script>')</script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript">typeof $().modal == 'function' || document.write('<script src="vendor/js/bootstrap-3.3.4.min.js"><\/script>')</script>
+
+  </head>
+  <body>
+  <% include navigation %>
+  <!-- END ADDED BY header.ejs -->
