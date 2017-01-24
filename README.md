@@ -15,24 +15,28 @@ The primary emphasis of this application is to allow newly-minted LDS family his
 - [x] Heroku app
 - [x] README + TODO
 - [x] Utilize CDN for static assets
-- [ ] Publicly visible--login only for convenience
+- [x] Localized (key off of browser/FS lang locale, fall back to "en")
+- [x] Publicly visible--login only for convenience
+- [x] Add loading spinner while fetching data
+- [x] Add lightweight database (Firebase) to store progress
+
+  - [ ] Limit access to specific database entries, based on user ID (potentially split into separate databases)
+
+- [ ] Add local storage for database fallback & non-logged-in experience
 - [ ] Add FamilySearch Oauth for long-term, portable storing of progress
 
-	- [ ] Register redirect URI
-	- [ ] Obtain devkey
-	- [ ] Integrate OAuth flow
-	- [ ] Add lightweight database (PostgreSQL/Firebase) to store progress, keyed to individual users
-	- [ ] Vanity URL
-	- [ ] Localized (key off of browser/FS lang locale)
+  - [ ] Register redirect URI
+  - [ ] Obtain devkey
+  - [ ] Integrate OAuth flow
+  - [ ] Vanity URL
 
 - [ ] Enumerate competencies and relative weights (just use points and convert to percentage in calculation to avoid re-working values after every change)
-	- [ ] Computer skills: ~10%
-	- [ ] Core Competencies/Essential Skills: ~80%
-	- [ ] Advanced Skills: ~10%
+  - [ ] Computer skills: ~10%
+  - [ ] Core Competencies/Essential Skills: ~80%
+  - [ ] Advanced Skills: ~10%
 
 - [ ] Total percentage score as aggregate of all subsections, updated on change
 - [ ] Member-related knowledge gated by member status
-- [ ] Add local storage for non-logged-in experience
 - [ ] FH Coordinator status page for a set of users
 - [ ] Auto-save on each change
 - [ ] Auto checking/unchecking

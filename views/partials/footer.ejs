@@ -1,4 +1,76 @@
     <!-- BEGIN ADDED BY footer.ejs -->
     <footer></footer>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase-database.js"></script>
+
+    <script>
+      /**
+        * @function - String.prototype.format adds the format function to the String type, allowing dynamic content to be injected in specified positions (i.e. {0})
+        * @returns - The formatted string, with replacements made for passed-in parameters
+      */
+      String.prototype.format = function() {
+        var content = this;
+        for (var i = 0; i < arguments.length; i++) {
+          var replacement = '{' + i + '}';
+          content = content.replace(replacement, arguments[i]);
+        }
+        return content;
+      };
+
+      // TODO: ADD EXPAND/COLLAPSE ALL FUNCTION
+
+      var lang,
+          masterChecklist,
+          userData,
+          locale = (window.navigator.userLanguage || window.navigator.language || "en").substr(0, 2).toLowerCase();
+          cisId = "userid",
+          firebaseConfig = {
+            apiKey: "AIzaSyCba2vGgbYQoDWetBL3x6yIvVm_33cXlE0",
+            authDomain: "familyhistoryskills.firebaseapp.com",
+            databaseURL: "https://familyhistoryskills.firebaseio.com",
+            storageBucket: "familyhistoryskills.appspot.com",
+            messagingSenderId: "485405197780"
+      };
+
+      // TODO: ALSO HAVE LOCALLY STORED SKILLS, PROGRESS AND LANG JSON FOR FAST FIRST RENDER, AND AS A FALLBACK IN CASE FIREBASE IS INACCESSIBLE
+
+      firebase.initializeApp(firebaseConfig);
+
+      firebase.database().ref("/locales/" + locale).once("value").then(function(snapshot) {
+        lang = snapshot.val();
+
+        firebase.database().ref("/_skills_sections").once("value").then(function(snapshot) {
+          masterChecklist = snapshot.val();
+        });
+
+        firebase.database().ref("/users/" + cisId).once("value").then(function(snapshot) {
+          userData = snapshot.val();
+          firebase.database().goOffline();
+
+          $("main").removeClass("loading");
+          $(".header-title").html(lang.HEADING_CHECKLIST);
+          $(".header-subtitle").html(lang.HEADING_FOR_NAME.format(userData.name));
+          $(".expand-collapse").html(lang.BUTTON_EXPAND_COLLAPSE);
+
+          // TODO: ADD PERCENTAGE/AGGREGATE PERCENTAGE FUNCTION TO CALCULATE PERCENTAGES, UPDATE THE TOTAL PERCENTAGE, AND ADD APPROPRIATE PROGRESSBAR CLASSES FOR EACH LEVEL
+          // .progress-bar-danger (0-5%)
+          // .progress-bar-warning (5-25%)
+          // .progress-bar-info (25-95%)
+          // .progress-bar-success (95%+)
+
+          // TODO: ADD WATCH/ONCLICK ON CHECKBOXES TO CALL PERCENTAGE/AGGREGATE PERCENTAGE FUNCTION
+
+          var totalCompleteness = .2;
+          totalCompleteness = totalCompleteness.toLocaleString([locale, "en"], {style: "percent"});
+
+          $(".header-total-completeness").html(lang.HEADING_COMPLETENESS.format(totalCompleteness));
+        });
+      });
+
+    </script>
+
   </body>
 </html>

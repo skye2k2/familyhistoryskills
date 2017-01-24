@@ -1,25 +1,30 @@
 <% include partials/header %>
 
-  <main>
+  <main class="loading">
     <article>
       <hgroup>
-        <h1><%= title %></h1>
-        <h3>for &lt;%username%&gt;</h3>
+        <h1 class="header-title">&nbsp;</h1>
+        <h2 class="header-subtitle">&nbsp;</h2>
       </hgroup>
-      <p>Your personal progress in mastering essential family history skills.</p>
+      <div class="spinner"></div>
 
+      <h3 class="header-total-completeness">&nbsp;</h3>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="20"
+        aria-valuemin="0" aria-valuemax="100" style="width:20%">
+        </div>
+      </div>
 
-      <h3>Total completeness: <span class="total">27%</span></h3>
+      <p><a class="expand-collapse">&nbsp;</a></p>
 
-      <p><a>Show/Hide All</a></p>
-
-      <form>
+      <form class="checklist">
 
       <!-- Begin repeatable block for competencies with subsections -->
         <details id="account-management">
-          <summary><a id="user-content-account-management" class="anchor" href="#account-management" aria-hidden="true"></a>Account Management <span class="completeness">(50%)</span></summary>
+          <summary><a id="user-content-account-management" class="anchor" href="#account-management" aria-hidden="true"></a>Account Management <span class="score">(50%)</span></summary>
           <div class="content">
             <label><input type="checkbox" name="account-item" /> Item</label>
+            <p>Hrm: Expandable description, while still having the checkbox clickable...</p>
             <ul>
               <li><a>Resource for helping with stuff</a></li>
             </ul>
