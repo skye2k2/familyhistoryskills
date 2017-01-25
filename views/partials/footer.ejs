@@ -22,10 +22,69 @@
 
       // TODO: ADD EXPAND/COLLAPSE ALL FUNCTION
 
+      /**
+        * @function - calculateProgressPercentage
+        * @param {array} checklist - list of skills sections, with completion statuses
+        * @returns - Nothing
+        * @calls updateProgressDisplay
+      */
+      function calculateProgressPercentage (checklist) {
+        var maxPoints = 0,
+            totalPoints = 0,
+            totalSections = 0;
+        // TODO: INTELLIGENTLY PARSE SKILLS WITH SUBSECTIONS
+        for (var i = 0; i < checklist.length; i++) {
+          maxPoints += checklist[i].value;
+          if (checklist[i].complete){
+            totalPoints += checklist[i].value;
+          }
+        }
+
+        totalPercentage = (maxPoints !== 0)? totalPoints/maxPoints: 0;
+
+totalPercentage = 0.35;
+
+        updateProgressDisplay(totalPercentage);
+      }
+
+      /**
+        * @function - updateProgressDisplay takes a decimal percentage and sends it to the UI. Updates header and progress bar content.
+        * @param {float} percentage - The total completeness percentage
+        * @returns - Nothing. Modifies global variables and DOM directly
+      */
+      function updateProgressDisplay (percentage) {
+
+        var $progressBar = $(".total-completeness .progress-bar");
+
+        $progressBar
+          .removeClass("progress-bar-danger progress-bar-warning progress-bar-info progress-bar-success");
+
+        if (totalPercentage <= 0.10) {
+          $progressBar.addClass("progress-bar-danger");
+        } else if (totalPercentage <= 0.35) {
+          $progressBar.addClass("progress-bar-warning");
+        } else if (totalPercentage < 0.90) {
+          $progressBar.addClass("progress-bar-info");
+        } else if (totalPercentage >= 0.90) {
+          $progressBar.addClass("progress-bar-success");
+        }
+
+        $progressBar
+          .css('width', totalPercentage * 100 + "%")
+          .attr("aria-valuenow", totalPercentage * 100);
+
+        formattedPercentage = totalPercentage.toLocaleString([locale, DEFAULT_LOCALE], {style: "percent"});
+
+        $(".header-total-completeness").html(lang.HEADING_COMPLETENESS.format(formattedPercentage));
+      }
+
       var lang,
           masterChecklist,
           userData,
-          locale = (window.navigator.userLanguage || window.navigator.language || "en").substr(0, 2).toLowerCase();
+          formattedPercentage,
+          totalPercentage,
+          DEFAULT_LOCALE = "en",
+          locale = (window.navigator.userLanguage || window.navigator.language || DEFAULT_LOCALE).substr(0, 2).toLowerCase();
           cisId = "userid",
           firebaseConfig = {
             apiKey: "AIzaSyCba2vGgbYQoDWetBL3x6yIvVm_33cXlE0",
@@ -55,20 +114,11 @@
           $(".header-subtitle").html(lang.HEADING_FOR_NAME.format(userData.name));
           $(".expand-collapse").html(lang.BUTTON_EXPAND_COLLAPSE);
 
-          // TODO: ADD PERCENTAGE/AGGREGATE PERCENTAGE FUNCTION TO CALCULATE PERCENTAGES, UPDATE THE TOTAL PERCENTAGE, AND ADD APPROPRIATE PROGRESSBAR CLASSES FOR EACH LEVEL
-          // .progress-bar-danger (0-5%)
-          // .progress-bar-warning (5-25%)
-          // .progress-bar-info (25-95%)
-          // .progress-bar-success (95%+)
-
-          // TODO: ADD WATCH/ONCLICK ON CHECKBOXES TO CALL PERCENTAGE/AGGREGATE PERCENTAGE FUNCTION
-
-          var totalCompleteness = .2;
-          totalCompleteness = totalCompleteness.toLocaleString([locale, "en"], {style: "percent"});
-
-          $(".header-total-completeness").html(lang.HEADING_COMPLETENESS.format(totalCompleteness));
+          calculateProgressPercentage(masterChecklist);
         });
       });
+
+      // TODO: ADD WATCH/ONCLICK ON CHECKBOXES TO CALL PERCENTAGE/AGGREGATE PERCENTAGE FUNCTION
 
     </script>
 
