@@ -39,6 +39,7 @@ body
   width: 100%
 
 summary
+  display: inline-block
   font-size: 16px
   font-weight: bold
 
@@ -49,7 +50,8 @@ details ul
   padding-left: 60px
 
 label
-  margin-left: 20px
+  margin-bottom: 0
+  margin-left: 10px
 
 /* BEGIN BOOTSTRAP OVERRIDES */
 article h1
@@ -85,21 +87,37 @@ article h3
 .navbar-brand>img
   max-height: 100%
 
+input[type=checkbox]
+  margin-top: 1px
+  pointer-events: none
+  vertical-align: text-top
+
 .progress
   border: 1px solid #999
 
 .progress-bar
-  -webkit-transition: width 0.25s linear 1s
-  transition: width 0.25s linear 1s
+  -webkit-transition: width 0.2s linear 1s
+  transition: width 0.2s linear 1s
 /* END BOOTSTRAP OVERRIDES */
 
 a,
+input,
+label,
 summary
   cursor: pointer
 
+details
+  margin-bottom: 5px
+
+details > details
+  margin-left: 40px
+
+.content .description
+  margin-left: 18px
+
 /* Hidden States */
 .spinner
-.loading .progress
+/*.loading .progress DISABLING THIS STYLE ALLOWS THE INITIAL PAINT OF THE PROGRESS BAR TO ANIMATE IN */
   display: none
 
 /* Begin Spinner */
