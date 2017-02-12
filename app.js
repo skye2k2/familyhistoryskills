@@ -31,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 
 app.get('/', routes.index);
+app.get('/reference', routes.reference);
 
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));

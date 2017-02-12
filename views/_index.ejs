@@ -18,19 +18,11 @@
 
       <p><a class="expand-collapse" onclick="expandAll()">&nbsp;</a></p>
 
-      <form class="checklist"></form>
-
-      <!-- Begin repeatable block for competencies with subsections -->
-<!--
-          <details id="CORE">
-            <summary><a id="user-content-CORE" class="anchor" href="#CORE" aria-hidden="true"></a>Core Competencies <span class="score">(50%)</span></summary>
-            <div class="content">
-              <label><input type="checkbox" name="account-item" /> Item</label>
-            </div>
-          </details>
--->
-        <!-- End repeatable block for competencies with subsections -->
+      <form class="checklist">
+        <!-- content injected by checklist.ejs -->
+      </form>
     </article>
   </main>
 
+<% include partials/checklist %>
 <% include partials/footer %>

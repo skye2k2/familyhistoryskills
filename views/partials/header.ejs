@@ -38,6 +38,25 @@
     <script type="text/javascript">typeof $().modal == 'function' || document.write('<script src="vendor/js/bootstrap-3.3.4.min.js"><\/script>')</script>
 
     <script type="text/javascript">typeof window.localStorage == 'object' || document.write('<script src="vendor/js/localStoragePolyfill.js"><\/script>')</script>
+
+    <!-- TODO: ADD LOCAL FALLBACKS -->
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.6/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.6/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.6/firebase-database.js"></script>
+    <script type="text/javascript">
+      var firebaseConfig = {
+            apiKey: "AIzaSyCba2vGgbYQoDWetBL3x6yIvVm_33cXlE0",
+            authDomain: "familyhistoryskills.firebaseapp.com",
+            databaseURL: "https://familyhistoryskills.firebaseio.com",
+            storageBucket: "familyhistoryskills.appspot.com",
+            messagingSenderId: "485405197780"
+      },
+      DEFAULT_LOCALE = "en",
+      locale = (window.navigator.userLanguage || window.navigator.language || DEFAULT_LOCALE).substr(0, 2).toLowerCase(),
+      lang;
+      firebase.initializeApp(firebaseConfig);
+    </script>
   </head>
   <body>
   <% include navigation %>

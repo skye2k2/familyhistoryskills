@@ -16,48 +16,51 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <!-- We will likely put the walkthroughs and question lists under this main menu -->
-<!--       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="/overview" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Competencies <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/overview">Competencies Overview</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/overview#account-management"></a></li>
-          </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown internalLinks">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
         </li>
-      </ul> -->
+      </ul>
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li class="dropdown">
+        <li class="dropdown resourceLinks">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="https://fhc.familysearch.org/" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Family History Center Services</a></li>
-
-            <li><a href="https://familysearch.org/apps/" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> FamilySearch Applications</a></li>
-          </ul>
         </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
-          <ul class="dropdown-menu">
 
 <!-- BEGIN MEMBER CONTENT -->
-
-            <li><a href="#">Doctrinal Support</a></li>
-
-            <li><a href="https://www.lds.org/ensign/1995/02/a-temple-motivated-people.p1" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Both Halves of the Blessing</a></li>
-
-            <li><a href="https://www.lds.org/ensign/2015/10/protecting-our-youth-through-family-history" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Protecting Our Youth through Family History</a></li>
-
-            <li><a href="https://www.lds.org/youth/video/simple-steps-to-find-powerful-spiritual-protection" target="_blank"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Simple Steps to Find Powerful Spiritual Protection</a></li>
-
-<!-- END MEMBER CONTENT -->
-
-          </ul>
+        <li class="dropdown memberLinks">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LDS Links <span class="caret"></span></a>
         </li>
+<!-- END MEMBER CONTENT -->
       </ul>
     </div>
   </div>
 </nav>
+
+<script type="text/javascript">
+
+  firebase.database().ref("/locales/" + locale).once("value").then(function(snapshot) {
+    lang = snapshot.val();
+
+    // Fall back to english, if no translation exists for the current locale
+    if (!lang) {
+      firebase.database().ref("/locales/en").once("value").then(function(snapshot) {
+        lang = snapshot.val();
+      });
+    }
+
+    lang.navigation.forEach(function (linkList) {
+      var $links = $("<ul class='dropdown-menu'></ul>");
+      var listName = Object.getOwnPropertyNames(linkList)[0];
+      $("." + listName + " [data-toggle=dropdown]").html(linkList[listName].text + " <span class='caret'></span>");
+
+      linkList[listName].links.forEach(function (link) {
+        $links.append("<li><a href='" + link.url + "' " + ((listName !== "internalLinks")? "target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> ": ">") + link.text + "</a></li>");
+      });
+      $("." + listName + ".dropdown").append($links);
+    });
+  });
+
+</script>
 <!-- END ADDED BY navigation.ejs -->
