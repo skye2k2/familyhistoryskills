@@ -158,7 +158,6 @@
         updateProgressDisplay(totalPercentage);
       }
 
-      // Repeatable skill details block
       function addDetailsSection (skill, subsection) {
         // Repeatable html block for competencies
         return $("<details id='" + skill.name + "' " + ((skill.expanded)? "open": "") + "><summary onclick='expand(this)'><a id='user-content-" + skill.name + "' class='anchor' href='#" + skill.name +"' aria-hidden='true'></a>" + lang["SKILL_" + skill.name + "_LABEL"] + " <span class='score'>" + ((!subsection)? "(100%)": "") + "</span> <label onclick='updateItem(event)'><input type='checkbox' name='" + skill.name + "' " + ((skill.complete)? "checked": "") + " /> Complete </label></summary><div class='content'><div class='description'>" + lang["SKILL_" + skill.name + "_DESCRIPTION"] + "</div></div></details>");
