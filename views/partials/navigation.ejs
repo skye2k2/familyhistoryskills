@@ -15,10 +15,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <ul class="nav navbar-nav">
-        <li class="dropdown internalLinks">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
-        </li>
+      <ul class="nav navbar-nav internalLinks">
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -50,14 +47,20 @@
     }
 
     lang.navigation.forEach(function (linkList) {
-      var $links = $("<ul class='dropdown-menu'></ul>");
       var listName = Object.getOwnPropertyNames(linkList)[0];
-      $("." + listName + " [data-toggle=dropdown]").html(linkList[listName].text + " <span class='caret'></span>");
+      if (listName === "internalLinks") {
+        linkList[listName].links.forEach(function (link) {
+          $("." + listName).append("<li><a href='" + link.url + "'>" + link.text + "</a></li>");
+        });
+      } else {
+        var $links = $("<ul class='dropdown-menu'></ul>");
+        $("." + listName + " [data-toggle=dropdown]").html(linkList[listName].text + " <span class='caret'></span>");
+        linkList[listName].links.forEach(function (link) {
+          $links.append("<li><a href='" + link.url + "' target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> " + link.text + "</a></li>");
+        });
+        $("." + listName + ".dropdown").append($links);
+      }
 
-      linkList[listName].links.forEach(function (link) {
-        $links.append("<li><a href='" + link.url + "' " + ((listName !== "internalLinks")? "target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> ": ">") + link.text + "</a></li>");
-      });
-      $("." + listName + ".dropdown").append($links);
     });
   });
 
