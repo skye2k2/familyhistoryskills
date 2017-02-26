@@ -61,6 +61,14 @@
         updateSkillProperty(skillName, "complete", !($(evt.target).find("[type=checkbox]").first().prop("checked")));
       }
 
+      /**
+        * @function - updateSkillProperty is called when changing checklist state and is the generic function for modifying property values
+        * @param {string} skillName - The skill being updated
+        * @param {string} skillProperty - The property in the object to update
+        * @param {string} skillValue - The value to set the proprty to
+        * @calls calculateProgressPercentage() if updating completeness
+        * @returns - Nothing. Modifies global variables and DOM directly
+      */
       function updateSkillProperty (skillName, skillProperty, skillValue) {
         for (var i = 0; i < localMasterChecklist.length; i++) {
           if (localMasterChecklist[i].name === skillName) {
@@ -78,17 +86,17 @@
             for (var j = 0; j < localMasterChecklist[i].subsections.length; j++) {
               if (localMasterChecklist[i].subsections[j].name === skillName) {
                 localMasterChecklist[i].subsections[j][skillProperty] = skillValue
-                store.setItem("masterChecklist", localMasterChecklist);
 
                 if (skillProperty === "complete" && skillValue === false) {
                   localMasterChecklist[i][skillProperty] = skillValue
-                  store.setItem("masterChecklist", localMasterChecklist);
                 }
                 break;
               }
             }
           }
         };
+
+        store.setItem("masterChecklist", localMasterChecklist);
 
         if (skillProperty === "complete") {
          calculateProgressPercentage(localMasterChecklist);
@@ -126,7 +134,6 @@
 
           maxPoints += checklist[i].value;
 
-
           // Loop through and add subsections
           if (checklist[i].subsections) {
             for (var j = 0; j < checklist[i].subsections.length; j++) {
@@ -139,7 +146,7 @@
             }
 
             sectionPercentage = (subsectionMaxPoints !== 0)? subsectionTotalPoints/subsectionMaxPoints: 0;
-            $subsection.find(".score").first().html("(" + sectionPercentage * 100 + "%)");
+            $subsection.find(".score").first().html("(" + Math.floor(sectionPercentage * 100) + "%)");
             if (sectionPercentage === 1) {
               $section.find("[type=checkbox]").first().prop("checked", true)
             }
@@ -147,7 +154,10 @@
             totalPoints += checklist[i].value * sectionPercentage;
           } else {
             if (checklist[i].complete) {
+              $userChecklist.find("details#" + checklist[i].name).find(".score").first().html("(" + (100) + "%)");
               totalPoints += checklist[i].value;
+            } else {
+              $userChecklist.find("details#" + checklist[i].name).find(".score").first().html("(" + (0) + "%)");
             }
           }
         }
@@ -160,7 +170,7 @@
 
       function addDetailsSection (skill, subsection) {
         // Repeatable html block for competencies
-        return $("<details id='" + skill.name + "' " + ((skill.expanded)? "open": "") + "><summary onclick='expand(this)'><a id='user-content-" + skill.name + "' class='anchor' href='#" + skill.name +"' aria-hidden='true'></a>" + lang["SKILL_" + skill.name + "_LABEL"] + " <span class='score'>" + ((!subsection)? "(100%)": "") + "</span> <label onclick='updateItem(event)'><input type='checkbox' name='" + skill.name + "' " + ((skill.complete)? "checked": "") + " /> Complete </label></summary><div class='content'><div class='description'>" + lang["SKILL_" + skill.name + "_DESCRIPTION"] + "<ul><li><a href='" + skill.links + "' target='_blank'>" + skill.links + "</a></li></ul></div></div></details>");
+        return $("<details id='" + skill.name + "' " + ((skill.expanded)? "open": "") + "><summary onclick='expand(this)'><a id='user-content-" + skill.name + "' class='anchor' href='#" + skill.name +"' aria-hidden='true'></a>" + lang["SKILL_" + skill.name + "_LABEL"] + " <span class='score'>" + ((!subsection)? "(100%)": "") + "</span> <label onclick='updateItem(event)'><input type='checkbox' name='" + skill.name + "' " + ((skill.complete)? "checked": "") + " /> Complete </label></summary><div class='content'><div class='description'>" + lang["SKILL_" + skill.name + "_DESCRIPTION"] + "<ul class='list-unstyled'><li><a href='" + skill.links + "' target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> " + skill.links + "</a></li></ul></div></div></details>");
 
 
         // <ul class='links'>
