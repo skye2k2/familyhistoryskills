@@ -251,10 +251,10 @@
 
         localMasterChecklist = store.getItem('masterChecklist');
 
-        // TODO: Merge the local skills list CORRECTLY with the one retrieved from the database, soas to get new additions
         if (!localMasterChecklist) {
           localMasterChecklist = store.setItem('masterChecklist', masterChecklist);
         } else {
+          // TODO: Merge the local skills list CORRECTLY with the one retrieved from the database (pull expanded & complete status, keyed by name), soas to get new additions
           $.extend(masterChecklist, localMasterChecklist);
         }
 

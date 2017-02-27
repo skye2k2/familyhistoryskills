@@ -16,17 +16,24 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav internalLinks">
+        <li><a href="/">Checklist</a></li>
+        <li><a href="/reference">Quick Reference (FAQ)</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
 
         <li class="dropdown resourceLinks">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://thefhguide.com/" target="_blank">The Family History Guide</a></li>
+            <li><a href="https://fhc.familysearch.org/" target="_blank">Family History Center Services</a></li>
+            <li><a href="https://familysearch.org/apps/" target="_blank">FamilySearch Apps</a></li>
+          </ul>
         </li>
 
 <!-- BEGIN MEMBER CONTENT -->
         <li class="dropdown memberLinks">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LDS Links <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LDS Articles <span class="caret"></span></a>
         </li>
 <!-- END MEMBER CONTENT -->
       </ul>
@@ -49,11 +56,13 @@
     lang.navigation.forEach(function (linkList) {
       var listName = Object.getOwnPropertyNames(linkList)[0];
       if (listName === "internalLinks") {
+        $("." + listName).empty();
         linkList[listName].links.forEach(function (link) {
           $("." + listName).append("<li><a href='" + link.url + "'>" + link.text + "</a></li>");
         });
       } else {
         var $links = $("<ul class='dropdown-menu'></ul>");
+        $("." + listName + " [data-toggle=dropdown]").empty();
         $("." + listName + " [data-toggle=dropdown]").html(linkList[listName].text + " <span class='caret'></span>");
         linkList[listName].links.forEach(function (link) {
           $links.append("<li><a href='" + link.url + "' target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> " + link.text + "</a></li>");

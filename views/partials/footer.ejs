@@ -1,7 +1,14 @@
     <!-- BEGIN ADDED BY footer.ejs -->
-    <footer></footer>
+    <footer>
+      <section class="description" style="font-size: 8px">
+        <p>FamilyHistorySkills is meant to be a resource for tracking and improving the necessary skills needed to function adequately in the free FamilySearch toolset. </p>
+        <p>Developer information: You are likely only seeing this content if you are reading the source, have disabled JavaScript, or are using a text-only browser. If so, congratulations. This application is a nodejs+Express+Firebase local-storage-enabled Heroku application, and is a relatively open-source project: <a href="https://github.com/skye2k2/familyhistoryskills" target="_blank">https://github.com/skye2k2/familyhistoryskills</a>. PR's welcome, issues also. The application can be run locally by running `npm install` and using the Heroku Toolbelt.
+      </section>
+    </footer>
   </body>
   <script>
+    $("section.description").hide();
+    // Only load analytics for the deployed application
     if (document.location.hostname.search("familyhistoryskills.herokuapp.com") !== -1) {
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
