@@ -1,0 +1,133 @@
+{
+  "_skills_sections": [
+    {
+      "member_only": false,
+      "name": "CORE",
+      "links": "http://thefhguide.com/project-1-family-tree.html",
+      "value" : 9,
+      "subsections" : [
+        {
+          "links": "http://thefhguide.com/project-1-family-tree.html#goal-13",
+          "member_only": false,
+          "name": "ACCOUNT",
+          "value" : 1
+        },
+        {
+          "links": "http://thefhguide.com/project-1-family-tree.html#goal-1",
+          "member_only": false,
+          "name": "TREE",
+          "value" : 2
+        },
+        {
+          "links": "http://thefhguide.com/project-5-indexing.html",
+          "member_only": false,
+          "name": "INDEXING",
+          "value" : 1
+        },
+        {
+          "links": "http://thefhguide.com/project-2-memories.html",
+          "member_only": false,
+          "name": "MEMORIES",
+          "value" : 1
+        },
+        {
+          "links": "https://familysearch.org/ask/#/temple/",
+          "member_only": true,
+          "name": "ORDINANCES",
+          "value" : 1
+        },
+        {
+          "links": "http://thefhguide.com/project-1-family-tree.html#goal-8",
+          "member_only": false,
+          "name": "SOURCING",
+          "value" : 1
+        }
+      ]
+    }, {
+      "member_only": false,
+      "name": "ADVANCED",
+      "links": "https://familysearch.org/apps",
+      "value" : 1
+    }
+  ],
+  "locales": {
+    "en": {
+      "navigation": [
+        {
+          "internalLinks": {
+            "text": "Pages",
+            "links": [
+              {
+                "url": "/",
+                "text": "Checklist"
+              },
+              {
+                "url": "/reference",
+                "text": "Quick Reference (FAQ)"
+              }
+            ]
+          }
+        },
+        {
+          "resourceLinks": {
+            "text": "Resources",
+            "links": [
+              {
+                "url": "http://thefhguide.com/",
+                "text": "The Family History Guide"
+              },
+              {
+                "url": "https://fhc.familysearch.org/",
+                "text": "Family History Center Services"
+              },
+              {
+                "url": "https://familysearch.org/apps/",
+                "text": "FamilySearch Apps"
+              }
+            ]
+          }
+        },
+        {
+          "memberLinks": {
+            "text": "LDS Articles",
+            "links": [
+              {
+                "url": "https://www.lds.org/ensign/1995/02/a-temple-motivated-people.p1",
+                "text": "Both Halves of the Blessing"
+              },
+              {
+                "url": "https://www.lds.org/ensign/2015/10/protecting-our-youth-through-family-history",
+                "text": "Protecting Our Youth through Family History"
+              },
+              {
+                "url": "https://www.lds.org/youth/video/simple-steps-to-find-powerful-spiritual-protection",
+                "text": "Simple Steps to Find Powerful Spiritual Protection"
+              }
+            ]
+          }
+        }
+      ],
+      "HEADING_CHECKLIST": "Family History Skills Personal Checklist",
+      "HEADING_FOR_NAME": "for {0}",
+      "HEADING_COMPLETENESS": "Total Completeness: {0}",
+      "BUTTON_EXPAND_COLLAPSE": "Expand/Collapse All",
+      "LABEL_COMPLETE": "Complete",
+      "SKILL_ADVANCED_LABEL": "Advanced Skills",
+      "SKILL_ADVANCED_DESCRIPTION": "<p>Develop advanced knowledge of family history research, methods, and/or technologies. Choose a topic that interests you. Some options are: partners, mobile apps, image and document scanning, indexing arbitration, and microfische/film.</p>",
+      "SKILL_CORE_LABEL": "Core FamilySearch Competencies",
+      "SKILL_CORE_DESCRIPTION": "<p>The core set of abilities needed to functionally assist any individual in their family history research using FamilySearch products.</p>",
+      "SKILL_TREE_LABEL": "Family Tree",
+      "SKILL_TREE_DESCRIPTION": "<p>Understand the nuances of the different pedigree views, the features in the person page, and simple navigation.</p>",
+      "SKILL_ACCOUNT_LABEL": "Account Management",
+      "SKILL_ACCOUNT_DESCRIPTION": "<p>Know how to set up, recover, and change settings for a user account.</p>",
+      "SKILL_INDEXING_LABEL": "Indexing",
+      "SKILL_INDEXING_DESCRIPTION": "<p>Know the purpose, process, and verification of indexing.</p><p>Has downloaded, indexed, and submitted an indexing batch on their own.</p>",
+      "SKILL_MEMORIES_LABEL": "Memories",
+      "SKILL_MEMORIES_DESCRIPTION": "<p>Know the types of memories, upload limits, living person tagging caveats, sharing permissions required, and process for uploading and attaching memories.</p><p>Has uploaded and attached (or assited another in uploading and attaching) their own memories.</p>",
+      "SKILL_ORDINANCES_LABEL": "Ordinances",
+      "SKILL_ORDINANCES_DESCRIPTION": "<p>Understand the prerequisites of reserving individual, couple, and parent-child ordinances. Know the restrictions of the 110-year rule and two-year reservation limit.</p><p>Has reserved (or assisted another in reserving) an ancestor's ordinances.</p>",
+      "SKILL_SOURCING_LABEL": "Sources",
+      "SKILL_SOURCING_DESCRIPTION": "<p>Understand the process of attaching and tagging sources.</p><p>Has found and attached (or assisted another in finding and attaching) a source to an individual in the tree.</p>"
+    }
+  }
+}
