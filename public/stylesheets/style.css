@@ -90,6 +90,7 @@ input[type=checkbox] {
   border: 1px solid #999;
 }
 .progress-bar {
+  border-right: #999;
   -webkit-transition: width 0.2s linear 1s;
   transition: width 0.2s linear 1s;
 }
