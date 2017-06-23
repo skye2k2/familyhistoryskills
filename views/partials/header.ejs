@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="author" href="https://github.com/skye2k2" />
     <meta name="google-site-verification" content="wnMwNMCUcKCvHHmd9KLEG0QD67X0f0q7jHiBQs12WKM" />
-    <meta name="description" content="Easy free online family history checklist, focusing on free FamilySearch genealogy tools. Answers to common FamilySearch questions and pitfalls, and links to current additional information, guides, and walkthroughs. Track and improve your family history skills today." />
+    <meta name="description" content="Easy free online family history skills checklist, focusing on free FamilySearch genealogy tools. Answers to common FamilySearch questions and pitfalls, and links to current additional information, guides, and walkthroughs. Track and improve your family history skills today." />
     <meta name="viewport" content="width=device-width">
 
     <!-- Load external scripts and styles, falling back to local copies if unreachable or offline -->
@@ -57,7 +57,8 @@
             messagingSenderId: "485405197780"
       },
       DEFAULT_LOCALE = "en",
-      locale = (window.navigator.userLanguage || window.navigator.language || DEFAULT_LOCALE).substr(0, 2).toLowerCase(),
+      languages = (window.navigator.languages)? window.navigator.languages: [],
+      locale = (window.navigator.userLanguage || languages[0] || window.navigator.language || DEFAULT_LOCALE).substr(0, 2).toLowerCase(),
       lang;
       firebase.initializeApp(firebaseConfig);
     </script>

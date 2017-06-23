@@ -128,6 +128,84 @@
       "SKILL_ORDINANCES_DESCRIPTION": "<p>Understand the prerequisites of reserving individual, couple, and parent-child ordinances. Know the restrictions of the 110-year rule and two-year reservation limit.</p><p>Has reserved (or assisted another in reserving) an ancestor's ordinances.</p>",
       "SKILL_SOURCING_LABEL": "Sources",
       "SKILL_SOURCING_DESCRIPTION": "<p>Understand the process of attaching and tagging sources.</p><p>Has found and attached (or assisted another in finding and attaching) a source to an individual in the tree.</p>"
+    },
+    "de": {
+      "navigation": [
+        {
+          "internalLinks": {
+            "text": "Seiten",
+            "links": [
+              {
+                "url": "/",
+                "text": "Checkliste"
+              },
+              {
+                "url": "/reference",
+                "text": "Häufig Gestellte Fragen (HGF)"
+              }
+            ]
+          }
+        },
+        {
+          "resourceLinks": {
+            "text": "Resources",
+            "links": [
+              {
+                "url": "http://thefhguide.com/",
+                "text": "The Family History Guide"
+              },
+              {
+                "url": "https://fhc.familysearch.org/",
+                "text": "Family History Center Services"
+              },
+              {
+                "url": "https://familysearch.org/apps/",
+                "text": "FamilySearch Apps"
+              }
+            ]
+          }
+        },
+        {
+          "memberLinks": {
+            "text": "HLT Aufsätze",
+            "links": [
+              {
+                "url": "https://www.lds.org/liahona/2010/10/a-temple-motivated-people.p1?lang=deu",
+                "text": "Both Halves of the Blessing"
+              },
+              {
+                "url": "https://www.lds.org/ensign/2015/10/protecting-our-youth-through-family-history",
+                "text": "Protecting Our Youth through Family History"
+              },
+              {
+                "url": "https://www.lds.org/youth/video/simple-steps-to-find-powerful-spiritual-protection",
+                "text": "Simple Steps to Find Powerful Spiritual Protection"
+              }
+            ]
+          }
+        }
+      ],
+      "HEADING_CHECKLIST": "Persönliche Ahnenforschungkenntnisse Checkliste",
+      "HEADING_FOR_NAME": "für {0}",
+      "HEADING_COMPLETENESS": "Zusammengerechnete Vollständigkeit: {0}",
+      "BUTTON_EXPAND_COLLAPSE": "All ein- oder aufklappen",
+      "LABEL_COMPLETE": "Fertig",
+      "SKILL_ADVANCED_LABEL": "Fortgeschrittene Kenntnisse",
+      "SKILL_ADVANCED_DESCRIPTION": "<p>Man besitzt fortgeschrittene ahnenforschungsbezogene Wissen, Methoden, oder Technologien. Man darf etwas auswählen, wofür er sich interessiert. Einige Möglichkeiten sind: FamilySearch Partner, Handy-Apps, Bild und Dokument digitalische Darstellung, und Mikrofiche.</p>",
+      "SKILL_CORE_LABEL": "Grundlegende FamilySearchkenntnisse",
+      "SKILL_CORE_DESCRIPTION": "<p>Das grudlegende Wissen, was man besitzen muß, um irgendjemandem beim FamilySearch Ahnenforschung helfen zu können.</p>",
+      "SKILL_TREE_LABEL": "Familienstammbaum",
+      "SKILL_TREE_DESCRIPTION": "<p>Man versteht die verschiedenen Familienstammbäume, die Personendetails, und einfache Navigation.</p>",
+      "SKILL_ACCOUNT_LABEL": "Benutzereinstellungen",
+      "SKILL_ACCOUNT_DESCRIPTION": "<p>Man versteht wie man ein FamilySearch Konto herstellt, seine Einstellungen ändert, und es wiederherstellt.</p>",
+      "SKILL_INDEXING_LABEL": "Indexierung",
+      "SKILL_INDEXING_DESCRIPTION": "<p>Man kennt den Grund, die Prozess, und Verfügbarkeit der Indexing.</p><p>Man hat auch daran teilgenommen.</p>",
+      "SKILL_MEMORIES_LABEL": "Errinnerungen",
+      "SKILL_MEMORIES_DESCRIPTION": "<p>Man kennt die verschiedene Sorten von Errinerungen, die daraufbezogene Beschränkungen, die lebendige Person Vorsichtsmaßnahmen, die erforderliche Verteilungserlaubnisse, und die Prozess wodurch man eine Errinerung hochlädt.</p><p>Man hat seine eigene Errinerungen hochgeladen und angeknüpft.</p>",
+      "SKILL_ORDINANCES_LABEL": "Tempel",
+      "SKILL_ORDINANCES_DESCRIPTION": "<p>Man versteht die Voraussetzungen, die im Bezug auf Tempelreservierung abhängen. Man versteht auch die 110-Jahr Erfoderung</p><p>Man hat Templehandlungen für seine eigene Ahnen reserviert.</p>",
+      "SKILL_SOURCING_LABEL": "Quellen",
+      "SKILL_SOURCING_DESCRIPTION": "<p>Man versteht die Prozess die mit Quellen anknüpfen verbunden ist.</p><p>Man hat Quellen zu seinen eigenen Ahnen angeknüpft.</p>"
     }
   }
 }

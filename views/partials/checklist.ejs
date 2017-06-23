@@ -169,7 +169,7 @@
 
   function addDetailsSection (skill, subsection) {
     // Repeatable html block for competencies
-    return $("<details id='" + skill.name + "' " + ((skill.expanded)? "open": "") + "><summary onclick='expand(this)'><a id='user-content-" + skill.name + "' class='anchor' href='#" + skill.name +"' aria-hidden='true'></a>" + lang["SKILL_" + skill.name + "_LABEL"] + " <span class='score'>" + ((!subsection)? "(100%)": "") + "</span> <label onclick='updateItem(event)'><input type='checkbox' name='" + skill.name + "' " + ((skill.complete)? "checked": "") + " /> Complete </label></summary><div class='content'><div class='description'>" + lang["SKILL_" + skill.name + "_DESCRIPTION"] + "<ul class='list-unstyled'><li><a href='" + skill.links + "' target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> " + skill.links + "</a></li></ul></div></div></details>");
+    return $("<details id='" + skill.name + "' " + ((skill.expanded)? "open": "") + "><summary onclick='expand(this)'><a id='user-content-" + skill.name + "' class='anchor' href='#" + skill.name +"' aria-hidden='true'></a>" + lang["SKILL_" + skill.name + "_LABEL"] + " <span class='score'>" + ((!subsection)? "(100%)": "") + "</span> <label onclick='updateItem(event)'><input type='checkbox' name='" + skill.name + "' " + ((skill.complete)? "checked": "") + " /> " +lang["LABEL_COMPLETE"] + " </label></summary><div class='content'><div class='description'>" + lang["SKILL_" + skill.name + "_DESCRIPTION"] + "<ul class='list-unstyled'><li><a href='" + skill.links + "' target='_blank'><span class='glyphicon glyphicon-link' aria-hidden='true'></span> " + skill.links + "</a></li></ul></div></div></details>");
   }
 
   /**
