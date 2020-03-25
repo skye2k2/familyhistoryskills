@@ -24,7 +24,7 @@
     "serve-favicon": "2.3.x",
     "simple-oauth2": "1.0.x",
     "stylus": "0.54.x",
-    "superagent": "3.4.x",
+    "superagent": "5.2.x",
     "twix": "1.1.x",
     "ua-parser-js": "0.7.x"
   },
