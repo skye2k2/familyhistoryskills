@@ -17,7 +17,7 @@
     "express-session": "1.15.x",
     "method-override": "2.3.x",
     "moment": "2.17.x",
-    "morgan": "1.8.x",
+    "morgan": "1.10.x",
     "nedb": "1.8.x",
     "numeral": "2.0.x",
     "q": "1.4.x",
